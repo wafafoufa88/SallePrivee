@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous | Salle de sport{% endblock %}
+
+
+{% block body %}
+
+<div class="my-5 mx-auto col-6">
+    {{ form_start(form)}}
+        <div class="row">
+            <div class="col-6">{{ form_row(form.prenom) }}</div>
+            <div class="col-6">{{ form_row(form.nom) }}</div>
+        </div>
+        <div class="row">
+            <div class="col-6">{{ form_row(form.sujet) }}</div>
+            
+        </div>
+    {{ form_end(form)}}
+</div>
+
+
+{% endblock %}
