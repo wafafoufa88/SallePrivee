@@ -18,7 +18,7 @@ class DefaultController extends AbstractController
             'controller_name' => 'DefaultController',
         ]);
     }
-    #[Route('/contact/contactez-nous', name: 'show_contact', methods: ['GET', 'POST'])]
+    #[Route('/salle/contactez-nous', name: 'show_contact', methods: ['GET', 'POST'])]
     public function Contact(): Response
     {
 
@@ -29,7 +29,7 @@ class DefaultController extends AbstractController
         $this->addFlash('success', "Votre message a bien été envoyé, nous reviendrons vers vous dans les plus brefs délais.");
 
 
-        return $this->render('contact/contact.html.twig', [
+        return $this->render('salle/contact_salle.html.twig', [
             'form' => $form->createView()
         ]);
     } 
