@@ -1,7 +1,183 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accuiel | Sallesport!{% endblock %}
+{% block title %}{% trans %}Accueil{% endtrans %}{% endblock %}
 
 {% block body %}
-                <H1 class="text-center my-4">Bienvenue dans ma salle </h1>
+
+<div class="col-6 mx-auto">
+					{% include 'include/_flashes.html.twig' %}
+				</div>
+{#-----------------------------------------------------carousel--------------#}
+{#<h1 class="section_subtitle titre_presetation1 fs-1">RESERVE TA SALLE DE SPORT</h1>#}
+
+<div id="carouselDark" class="carousel carousel-dark slide p-1 " data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselDark" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselDark" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselDark" data-bs-slide-to="2"></li>
+      <li data-bs-target="#carouselDark" data-bs-slide-to="3"></li>
+        <li data-bs-target="#carouselDark" data-bs-slide-to="4"></li>
+  </ol>
+  <div class="carousel-inner table">
+    <div class="carousel-item active">
+      <img src="{{ asset('uploads/' ~ sliders1.photo) }}" class="d-block w-100" alt="Slide 1">
+   
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('uploads/' ~ sliders2.photo) }}" class="d-block w-100" alt="Slide 2">
+    
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('uploads/' ~ sliders3.photo) }}" class="d-block w-100" alt="Slide 3">
+     
+    </div>
+     <div class="carousel-item">
+      <img src="{{ asset('uploads/' ~ sliders4.photo) }}" class="d-block w-100" alt="Slide 4">
+     
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselDark" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselDark" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+</div>
+
+<br>
+
+{# ----------------------------------------abonnement----------------------------------------------#}
+  <h1 class="section_subtitle titre_presetation1 fs-1">LES OFFRES DE TA SALLE DE SPORT</h1>
+  <br>
+            {% for abonnement in abonnements %}
+    <div class="container">
+ 
+    <div class="row   text-center text-white ">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm ">
+          <div class="card-header py-3 bg-#fd7e14 " style="background-color:#fd7e14;">
+            <h2 class="my-0 fw-normal text-white ">{{ abonnement.titre }}</h2>
+          </div>
+          <div class="card-body bg-black">
+            <h1 class="card-title pricing-card-title section_title-border">{{ abonnement.tarif}}<small class="text-muted fw-light">/moi</small></h1>
+            <h3>{{ abonnement.subtitre }}</h3>
+            <h6>{{ abonnement.alias}}</h6>
+            <p class="list-unstyled mt-3 mb-4"><hr>
+          {{ abonnement.description }}
+            </p>
+            <h4>COACHING PRIVE DANS SALLE DE SPORT PRIVEE</h4>
+            <button type="button" class="button button_flex pricing_button  text-white"><a href="#"><i class="bi bi-telephone-outbound mx-4 icones fs-5" ></i>0644763091</a></i></i></button>
+          </div>
+        </div>
+      </div>
+        </tbody>
+     
+    </div>
+
+                <hr>
+
+</div>
+  {% endfor %}
+ 
+  <h1 class="section_subtitle titre_presetation1 fs-1">NOS COATCHS SPORTIFS</h1>
+  <br>
+  <br>
+  <br>
+   <div class='row d-flex justify-content-evenly'>
+
+		<div class="card text-center bg-black border-warning" style="width: 25rem;">
+			<img class="rounded-circle" src="{{ asset('images/Nath.jpg')}}" width= "250"; class="card-img-top" alt="...">
+			<div class="card-body ">
+				<h2 class="card-title section_title-border">Coatch Nath</h2>
+        <p class="card-title color-white">Cours collectif 2 fois par semaine à 50€ le mois</p>
+					<p class="card-text"> Cours collectifs du lundi au vendredi le matin de 10h15-11h00 
+        <br> Cours collectif mardi, jeudi à 19h00 
+        </p>
+				<p class="card-text">
+					<small class="text-muted">uniquement les femmes </small><br><br>
+				<a href="{{ path('Carte1-abonnement') }}" class="btn btn-transparent btn-cta margin-10px-lr  text-white border-warning rounded-pill">DÉCOUVRIR</a>
+          
+				</p>
+			</div>
+		</div>
+		<div class="card text-center bg-black border-warning" style="width: 25rem;">
+			<img class=" rounded-circle" src="{{ asset('images/coatch.jpg')}}"  class="card-img-top" alt="...">
+			<div class="card-body">
+			<h2 class="card-title section_title-border">Coatch Chaki</h2><br><br>
+				<p class="card-title">Cours collectif 2 fois par semaine à 50€ le mois</p>
+					<p class="card-text"> Cours collectifs du lundi au vendredi le matin de 10h15-11h00 
+        <br> Cours collectif mardi, jeudi à 19h00
+        </p>
+				<p class="card-text">
+				<small class="text-muted">Mixte</small><br><br>
+				<a href="{{ path('Carte-abonnement') }}" class="btn btn-transparent btn-cta margin-10px-lr  text-white border-warning rounded-pill">DÉCOUVRIR</a>
+        </p>
+				
+			</div>
+		</div>
+
+		</div>
+
+	</div>
+  <br>
+        {#-----------------calculate-----------------#}
+<section class="calculate section">
+<div class="container text-center">
+<div class="row">
+<div class="col">
+<br>
+<br>
+<br>
+<img src="{{ asset('images/regime.png')}}" class="card-img-top" alt="...">
+  
+  </div>
+  <div class="col">
+      
+<div class="calculate_container container grid">
+        <div class="calculate_content" >
+        <div class="section_titles">
+          <h1 class="section_title-border">calculate</h1>
+          <h1 class="section_title">votre BMI</h1>
+        </div>
+        <p class="calculate_description">
+          le calculateur d'indice de masse corporelle (IMC) calcule l'indice de masse corporelle 
+          à partir de votre poids et de votre taille.
+        </p>
+        <form action="" class="calculate_form" id="calculate-form">
+          <div class="calculate_box">
+            <input type="number" placeholder="height" class="calculate_input" id="calculate-cm">
+            <label for="" class="calculate_label">cm</label>
+          </div>
+          <div class="calculate_box">
+            <input type="number" placeholder="weight" class="calculate_input" id="calculate-kg">
+            <label for="" class="calculate_label">kg</label>
+          </div>
+          <button type="submit" class="button button_flex">
+            calculer maintenant<i class="ri-arrow-right-line"></i>
+          </button>
+        </form>
+        <p class="calculate_message" id="calculate-message"></p>
+        </div>
+        
+  </div>
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <nav aria-label="navigation">
+  <ul class="pager">
+    <li><a href="#" title="Haut"><i class="bi bi-arrow-up-circle"  style="font-size: 2rem; color: orange;"></i></a></li>
+   
+  </ul>
+</nav>
+</section>
+
+
+
+
 {% endblock %}

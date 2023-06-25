@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article2{% endblock %}
+
+{% block body %}
+
+<div class="row">
+        <div class="col-8 mx-auto p-4">
+        <h1 class="section_subtitle titre_presetation1 fs-1 ">Quels sont les besoins nutritionnels d'un sportif ?</h1>
+<br>
+<h3>LES BESOINS NUTRITIONNELS SPÉCIFIQUES DU SPORTIF</h3>
+<p>La pratique régulière d’un sport augemente les dépenses énergétiques.
+
+Les apports énergétiques totaux conseillés sont donc plus élevés chez les sportifs.
+
+Elles passent de 2.600 kcal à 3.000 kcal pour les hommes actifs, voire 3.500 kcal pour les sportifs de haut niveau.
+
+Et, chez les femmes, de 2.000 à 2.400 kcal et parfois jusqu’à 2.800 kcal.
+
+Comment fait-on pour atteindre de tels apports de façon optimale et améliorer ses performances ?
+
+Une alimentation variée et équilibrée, adaptée au niveau des dépenses, permet généralement de satisfaire aux besoins accrus du sportif, sauf en cas de situation d’exception où elle doit satisfaire des besoins physiologiques particuliers.
+
+C’est par exemple le cas des sportifs de haut niveau avant une compétition, pour lesquels l’alimentation de base doit être adaptée plusieurs jours avant, avec pour objectifs :<br>
+
+<br>* Obtenir un niveau de forme optimal et favoriser la performance grâce à un poids idéal.
+Eviter les carences.
+<br>  * Assurer des réserves, une reminéralisation et une hydratation anticipatoire lors des épreuves de longue durée.
+<br>  * Optimiser la restauration des réserves après l’effort.
+<br>  * Répartition des macro nutriments</p>
+<h3></h3>
+        <img src="{{ asset('images/actu4.jpg') }}" class="img-article2" alt="...">
+        <h3>Combien de glucides ?</h3>
+        <p>Ils doivent constituer au moins 55% de la ration énergétique et jusqu’à 60-70 % dans les sports d’endurance.
+
+Substrat énergétique de l’effort, les glucides assurent les réserves de glycogène dans le muscle, qui ne sont pas reconstituées pendant l’effort et dont l’épuisement induit une fatigue locale. Il existe une autre source de glycogène dans le foie, qui sert à maintenir la glycémie et dont l’épuisement induit une hypoglycémie.
+
+On considère que la totalité des stocks de glycogène assure 3 heures d’effort (à 70% de la VO2max).
+
+En pratique, on recommande d’augmenter la part des glucides durant les 3 jours qui précèdent une compétition, afin de disposer d’un taux maximal de glycogène musculaire lors de l’effort.
+
+Pour les épreuves de longue durée, on privilégie les glucides à index glycémique élevé (solution de glucose, saccharose, maltodextrine, polyglucose ou fructose), sinon les glucides à index glycémique bas ou intermédiaire.</p>
+        <h3>Combien de lipides ?</h3>
+        <p>Dans les sports d’endurance, l’apport conseillé est de 20 à 30% de la ration.
+
+En phase d’entrainement, ils contribuent de façon significative à l’apport énergétique, puis au cours de l’exercice, ils remplacent peu à peu les glucides, mais ne permettent pas un effort aussi intense. En début d’exercice, ils permettent d’épargner les réserves en glycogène.
+
+Attention, leur consommation est déconseillée juste avant, pendant et après une compétition.</p>
+<h3>Rôle de l’alimentation pour la prise de masse</h3>
+<p>Comme vous l’aurez compris, lorsque l’on souhaite réaliser une prise de masse musculaire, l’alimentation est l’un des points clés. L’objectif est de réaliser, sur une période déterminée, un surplus calorique qui provoquera un développement musculaire plus important et permettra ainsi au sportif de prendre du poids.
+
+Pour réussir à réaliser cet objectif et obtenir des résultats, plusieurs étapes sont à respecter. Ainsi, il faudra non seulement adopter un régime alimentaire adéquat, suivre des entraînements réguliers adaptés, mais également accorder de l’importance au repos et à la récupération.
+
+Au niveau de l’alimentation, il ne suffit pas de manger en grande quantité pour réussir à prendre du poids. L’objectif étant de prendre de la masse musculaire et non graisseuse, elle demande un suivi régulier concernant le type de produits consommés et leur quantité. Il sera important de contrôler d’une part les apports protéiques et de l’autre part les apports en glucides et lipides dont le corps a besoin.
+
+Ainsi dans le cadre d’un objectif de prise de muscle, le sportif nécessitant une énergie suffisante pour réaliser des entrainements intensifs, devra adopter un régime alimentaire spécifique pour subvenir à ses besoins caloriques et pour atteindre son objectif.</p>
+<h3>Macronutriments pour réussir une prise de masse</h3>
+<p>Plusieurs catégories d’aliments contenant des macronutriments spécifiques sont essentielles lorsque l’on souhaite prendre de la masse. Effectivement, le développement musculaire nécessite différents apports en protéines, en glucides et en lipides, en quantités différentes selon les profils.<br>
+Dans le cas de la prise de la masse musculaire, la répartition recommandée est la suivante :
+
+<br>- 50% de glucides
+<br>- 40% de protéines
+<br>- 10% de lipides
+</p>
+<img src="{{ asset('images/alimentation.jpg') }}" class="img-article2" alt="...">
+
+    </div>
+    <nav aria-label="navigation">
+  <ul class="pager">
+    <li><a href="#" title="Haut"><i class="bi bi-arrow-up-circle"  style="font-size: 2rem; color: orange;"></i></a></li>
+    <li><a href="{{ path('show_actualite') }}" title="Précédent"><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: orange;"></i></a></li>
+  </ul>
+</nav>
+</div>
+
+{% endblock %}

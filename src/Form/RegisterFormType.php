@@ -54,7 +54,7 @@ class RegisterFormType extends AbstractType
             'label' => "Je m'inscris",
             'validate' => false,
             'attr' => [
-                'class' => 'd-block mx-auto my-3 col-4 btn btn-warning'
+                'class' => 'd-block mx-auto my-5 col-6 btn btn-outline-warning'
             ]
         ])
     ;

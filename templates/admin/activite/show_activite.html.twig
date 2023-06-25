@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une activite{% endblock %}
+
+{% block body %}
+
+    {% if activite is not defined %}
+        <h1 class="text-center my-3 section_subtitle titre_presetation1 fs-1">Ajouter une activite</h1>
+    {% else %}
+        <h1 class="text-center my-3">Modifier l'activite N°{{ activite.id }}</h1>
+    {% endif %}
+
+    <div class="row text-white fs-2">
+        <div class="col-8 mx-auto">
+
+            {{ form_start(form) }}
+
+                {{ form_row(form.titre) }}
+                {{ form_row(form.statut) }}
+                {{ form_row(form.description) }}
+
+                <div class="row">
+                    <div class="col-6">{{ form_row(form.photo) }}</div>
+                
+                </div>
+
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

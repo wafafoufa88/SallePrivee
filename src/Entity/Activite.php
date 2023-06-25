@@ -28,12 +28,10 @@ class Activite
     #[ORM\Column(length: 255)]
     private ?string $statut = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255,  nullable: true)]
     private ?string $photo = null;
 
-    #[ORM\ManyToOne(inversedBy: 'activite')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Salle $salle = null;
+    
 
     public function getId(): ?int
     {
@@ -88,15 +86,5 @@ class Activite
         return $this;
     }
 
-    public function getSalle(): ?Salle
-    {
-        return $this->salle;
-    }
-
-    public function setSalle(?Salle $salle): self
-    {
-        $this->salle = $salle;
-
-        return $this;
-    }
+  
 }

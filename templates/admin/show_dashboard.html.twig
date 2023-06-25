@@ -1,0 +1,213 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center my-4 section_subtitle titre_presetation1 fs-1">Bienvenue dans l'interface d'administration de votre site internet !</h1>
+<br>
+<br>
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {% include 'include/_flashes.html.twig' %}
+        </div>
+    </div>
+
+    <div class="row mx-auto text-center">
+        <div class="col-4 "><a href="{{ path('create_activite')}}" class="btn btn-warning">Ajouter une activite</a></div>
+
+        <div class="col-4"><a href="{{ path('create_abonnement')}}" class="btn btn-warning">Ajouter un abonnement</a></div>
+        <div class="col-4"><a href="{{ path('show_archive')}}" class="btn btn-warning"><i class="fa fa-trash"></i> Voir les archives</a></div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-10 mx-auto my-4">
+
+            <h2 class="text-center text-uppercase text-warning bg-dark">Tous les activites</h2>
+
+            <table class="table text-white">
+                <thead>
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">description</th>
+                    <th scope="col">photo</th>
+                    <th scope="col">statut</th>
+                    <th scope="col">crée le</th>
+                    <th scope="col">Modifié le</th>
+                    <th scope="col">Actions</th>
+                </tr>
+
+    </tr>
+    </thead>
+    <tbody>
+    
+                {% for activite in activites %}
+                    <tr>
+                        <th scope="row">{{ activite.id }}</th>
+                        <td>{{ activite.titre }}</td>
+                        <td>{{ activite.description }} </td>
+                        
+                        <td><img width="150" height="150" class="img-fluid" src="{{ asset('uploads/' ~ activite.photo) }}" alt="{{ activite.photo }}"></td>
+                        <td>{{ activite.statut }}</td>
+                        <td>{{ activite.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ activite.updatedAt | date('d/m/Y') }}</td>
+                        <td>
+                        
+                        <a href="{{ path('update_activite', {'id': activite.id}) }}" class="text-info" title="Modifier">
+									<i class="btn btn-primary bi bi-pencil-square"></i>
+								</a>
+								<a href="{{ path('soft_delete_activite', {'id': activite.id}) }}" class="text-danger" title="Archiver">
+									<i class="btn btn-danger bi bi-trash-fill"></i>
+								</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+<br>
+<br><br>
+<br>
+
+    <div class="row">
+        <div class="col-10 mx-auto">
+
+            <h2 class="text-center text-uppercase text-warning bg-dark">Toutes les abonnements</h2>
+
+            <table class="table text-white">
+                <thead>
+                <tr class="text-center ">
+                    <th>#</th>
+                    <th>titre</th>
+                    <th>subtitre</th>
+                    <th>description</th>
+                    <th>tarif</th>
+                    
+                    <th>duree</th>
+                    <th>photo</th>
+                    <th>alias</th>
+                    
+                    <th>Modifiée le</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for abonnement in abonnements %}
+                    <tr>
+                        <td>{{ abonnement.id }}</td>
+                        <td>{{ abonnement.titre }}</td>
+                         <td>{{ abonnement.subtitre }}</td>
+                        <td>{{ abonnement.description }}</td>
+                        <td>{{ abonnement.tarif }}</td>
+                       
+
+                
+                        <td>{{ abonnement.duree | date('d/m') }}</td>
+                        <td><img width="150" height="150" class="img-fluid" src="{{ asset('uploads/' ~ abonnement.photo) }}" alt="{{ abonnement.photo }}"></td>
+
+                        <td>{{ abonnement.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ abonnement.updatedAt | date('d/m/Y') }}</td>
+                        {% if abonnement.deletedAt is null %}
+                            <td>
+                                <a href="{{ path('update_abonnement', {'id': abonnement.id}) }}"
+                                class="text-info" title="Modifier les abonnements">
+                                    <i class="btn btn-primary bi bi-pencil-square"></i>
+                                </a>
+                                <a href="{{ path('soft_delete_abonnement', {'id': abonnement.id}) }}"
+                                class="text-danger"
+                                title="Archiver les abonnements"
+                                onclick="return confirm('Voulez-vous archiver cette abonnement ?')">
+                                    <i class="btn btn-danger bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        {% else %}
+                            <td class="bg-warning">
+                                <a href="{{ path('restore_abonnement', {'id': abonnement.id}) }}"
+                                class="text-primary"
+                                title="Restaurer la catégorie">
+                                    <i class="fa-solid fa-trash-arrow-up"></i>
+                                </a>
+                                <a href="{{ path('hard_delete_abonnement', {'id': abonnement.id}) }}"
+                                class="text-danger"
+                                title="Supprimer définitivement les abonnements"
+                                onclick="return confirm('Voulez-vous supprimer définitivement cette catégorie ?')">
+                                <i class="btn btn-danger bi bi-trash-fill"></i>
+                            
+                                </a>
+                            </td>
+                        {% endif %}
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6" class="bg-warning">Aucun abonnenment dans la base</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-6"></div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+    <div class="col-10 mx-auto">
+            <h2 class="text-center text-uppercase text-warning bg-dark">Tous les utilisateurs</h2>
+
+            <table class="table text-white">
+                <thead>
+                <tr class="text-center">
+                    <th>#</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Rôle</th>
+                    
+                    <th>Créé le</th>
+                    <th>Modifié le</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for user in users %}
+
+                    <tr class="text-center">
+
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.firstname }}</td>
+                        <td>{{ user.lastname }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.roles | first }}</td>
+                    
+                        <td>{{ user.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ user.updatedAt | date('d/m/Y') }}</td>
+                        <td>
+                            <a href="{{ path('modify_user_role', {'id': user.id}) }}" class="btn btn-sm btn-info" title="Modifier le rôle"><i class="bi bi-pencil-square"></i></a>
+                            <a href="" class="btn btn-sm btn-danger" title="Bannir"><i class="bi bi-slash-circle"></i></a>
+                        </td>
+
+                    </tr>
+ {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+{% endblock %}

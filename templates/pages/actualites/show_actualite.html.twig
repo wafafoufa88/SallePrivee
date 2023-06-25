@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Actualité{% endtrans %} | Salle privée{% endblock %}
+
+
+{% block body %}
+<h1 class="my-4 section_subtitle titre_presetation1 fs-1">ACTU DE TA SALLE DE SPORT PRIVEE</h1>
+<br>
+<br>
+    <div class="container margin-50px-top">
+    <div class="row">
+            <div class="col-md-12 text-center">
+            <a href="{{ path('article1') }}" class="btn btn-transparent btn-cta margin-10px-lr text-whiteborder text-white border-warning">SPORT ET ENTRAINEMENT</a>
+            <a href="{{ path('article3') }}" class="btn btn-transparent btn-cta margin-10px-lr text-whiteborder text-white border-warning">PERSONAL TRAINER</a>
+            <a href="{{ path('article2') }}" class="btn btn-transparent btn-cta margin-10px-lr text-whiteborder text-white border-warning">NUTRITION</a>
+            <a href="{{ path('article4') }}" class="btn btn-transparent btn-cta margin-10px-lr text-whiteborder text-white border-warning">DECOUVERTE</a>
+</div>
+</div>
+<br>
+<br>
+<br>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+    <img src="{{ asset('images/muscle1.jpg') }}" class="card-img-top" alt="...">
+    <div class="card-body bg-dark">
+        <h5 class="card-title text-white">Comment prendre de la masse musculaire ?</h5>
+        <a href="{{ path('article1') }}" class="btn btn-transparent btn-cta margin-10px-lr  text-white border-warning rounded-pill">DÉCOUVRIR</a>
+</div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{{ asset('images/actualite2.jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body bg-dark">
+        <h5 class="card-title text-white"> Quels sont les besoins nutritionnels d'un sportif ?</h5>
+        <a href="{{ path('article2') }}" class="btn btn-transparent btn-cta margin-10px-lr  text-white border-warning rounded-pill">DÉCOUVRIR</a>
+     
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{{ asset('images/actualite3 (2).jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body bg-dark">
+        <h5 class="card-title text-white">Les avantages d'un coach sportif personnel</h5>
+        <a href="{{ path('article3') }}" class="btn btn-transparent btn-cta margin-10px-lr  text-white border-warning rounded-pill">DÉCOUVRIR</a>
+      
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{{ asset('images/actualite4 (2).jpg') }}" class="card-img-top" alt="...">
+      <div class="card-body bg-dark">
+        <h5 class="card-title text-white">Faire du sport en salle ou chez soi : comment choisir ?</h5>
+        <a href="{{ path('article4') }}" class="btn btn-transparent btn-cta margin-10px-lr  text-white border-warning rounded-pill">DÉCOUVRIR</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<br>
+<br>
+<br>
+{% endblock %}

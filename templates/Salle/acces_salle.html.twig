@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Accès{% endtrans %} | Salle privée{% endblock %}
+
+
+{% block body %}
+
+
+<div class="row ">
+        <div class="col-6 mx-auto p-4 ">
+        <h1 class="section_subtitle titre_presetation1 fs-1 ">Venez nous rendre visite</h1>
+<br>
+<div>
+<h3>Salle privée à marseille</h3>
+<p>Devant toutes nos salles de sport, vous pourrez retrouver un parking pour garer vos voitures durant vos séances.</p>
+            <h4 class="my-4 fs-2">{% trans %} 0644763091 | 0640876695 {% endtrans %} </h4>
+        <a href="{{ path('contact') }}" class="link-warning underline-dark">Contactez-nous
+</button></a>
+<div>
+<iframe class="h-400 d-inline-block p-2"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6783176145527!2d2.299836073263549!3d48.86434424145991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdd0dd39a4d%3A0x508194b82b12f012!2s1%20Av.%20Montaigne%2C%2075008%20Paris!5e0!3m2!1sen!2sfr!4v1681897128842!5m2!1sen!2sfr"
+            width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <nav aria-label="navigation">
+  <ul class="pager">
+    <li><a href="#" title="Haut"><i class="bi bi-arrow-up-circle"  style="font-size: 2rem; color: orange;"></i></a></li>
+    <li><a href="{{ path('show_home') }}" title="Précédent"><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: orange;"></i></a></li>
+  </ul>
+</nav>
+</div>
+
+
+<br>
+<br>
+
+{% endblock %}

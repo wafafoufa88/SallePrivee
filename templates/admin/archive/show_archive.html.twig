@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir les archives{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center my-3 section_subtitle fs-1 p-6">Les Archives</h1>
+
+    {# ################# FLASHES ################# #}
+    <div class="row">
+        <div class="col-6 mx-auto">
+            {% include 'include/_flashes.html.twig' %}
+        </div>
+    </div>
+   
+
+    {# -------------------------------------------------------------------------------------------------- #}
+
+    
+    <div class="row my-5 mx-auto">
+        <div class="col-4">
+            <a class="btn btn-sm btn-outline-dark" href="{{ path('show_dashboard') }}"><i class="bi bi-arrow-left-circle"></i> Retour au tableau de bord</a>
+        </div>
+    </div>
+  
+
+    {# -------------------------------------------------------------------------------------------------- #}
+
+    
+    <div class="row">
+        <div class="col-10 mx-auto my-4">
+
+            <h2 class="text-center section_title-border fs-1">Tous les activites archivés</h2>
+<br>
+<br>
+            <table class="table text-white">
+
+                <thead>
+                <tr class="text-center">
+                    <th>#</th>
+                    <th>Titre</th>
+                    <th>description</th>
+                    <th>Photo</th>
+                    <th>statut</th>
+                    <th>Créé le</th>
+                    <th>Modifié le</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for activite in activites %}
+
+                    <tr class="text-center align-middle">
+
+                        <td>{{ activite.id }}</td>
+                        <td>{{ activite.titre}}</td>
+                        <td>{{ activite.description }}</td>
+                        <td><img width="150" height="150" class="img-fluid" src="{{ asset('uploads/' ~ activite.photo) }}" alt="{{ activite.titre }}"></td>
+                        <td>{{ activite.statut}}</td>
+                        <td>{{ activite.createdAt | date('d/m/Y') }}</td>
+                        <td>{{ activite.deletedAt | date('d/m/Y') }}</td>
+                        <td>
+                            <a href="{{ path('restore_activite', {'id': activite.id}) }}" class="btn btn-sm btn-info" title="Modifier"><i class="bi bi-reply-all-fill"></i></a>
+                            <a href="{{ path('hard_delete_activite', {'id': activite.id}) }}" onclick="return confirm('Voulez-vous vraiment supprimer définitivement cet article ?')" class="btn btn-sm btn-danger" title="Archiver"><i class="bi bi-x-circle"></i></a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+    </div>
+    
+
+    {# -------------------------------------------------------------------------------------------------- #}
+<br>
+<br>
+    <div class="row">
+    
+        <div class="col-10 mx-auto my-4">
+
+            <h2 class="text-center section_title-border fs-1">Toutes les abonnements archivées</h2>
+<br>
+<br>
+            <table class="table text-white">
+                <thead>
+                    <tr class="text-center">
+                        <th>#</th>
+                        <th>titre</th>
+                        <th>description</th>
+                        <th>tarif</th>
+                        <th>duree</th>
+                        <th>alias</th>
+                        <th>Créée le</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {% for abonnement in abonnements %}
+
+                    <tr class="text-center">
+                        <td>{{ abonnement.id }}</td>
+                        <td>{{ abonnement.titre }}</td>
+                        <td>{{ abonnement.description}}</td>
+                        <td>{{ abonnement.tarif }}</td>
+
+                        <td>{{ abonnement.alias }}</td>
+                        <td>{{ abonnement.createdAt | date('d/m/Y') }}</td>
+                        <td>
+                            <a href="{{ path('restore_abonnement', {'id': abonnement.id}) }}" class="text-info" title="Restaurer la catégorie"><i class="bi bi-reply-all-fill"></i></a>
+                            <a href="{{ path('hard_delete_abonnement', {'id': abonnement.id}) }}" class="text-danger" title="Supprimer définitivement la catégorie" onclick="return confirm('Voulez-vous vraiment supprimer définitivement cette catégorie ?')"><i class="bi bi-x-circle"></i></a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+        </div>
+{% endblock %}

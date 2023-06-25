@@ -42,7 +42,7 @@ class ContactFormType extends AbstractType
         ->add('submit', SubmitType::class, [
             'label' => 'Envoyer votre message',
             'attr' => [
-                'class' => 'my-5 d-block mx-auto btn-dark col-5'
+                'class' => 'my-5 d-block mx-auto btn btn-outline-warning col-5'
             ],
             'validate' => false
         ])

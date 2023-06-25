@@ -32,21 +32,15 @@ class Salle
     #[ORM\Column(length: 50)]
     private ?string $alias = null;
 
-    #[ORM\OneToMany(mappedBy: 'salle', targetEntity: Activite::class)]
-    private Collection $activite;
+   
 
     #[ORM\ManyToOne(inversedBy: 'salles')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $author = null;
 
-    #[ORM\OneToMany(mappedBy: 'salle', targetEntity: Commentary::class)]
-    private Collection $commentaries;
+   
 
-    public function __construct()
-    {
-        $this->activite = new ArrayCollection();
-        $this->commentaries = new ArrayCollection();
-    }
+   
 
     public function getId(): ?int
     {
@@ -104,32 +98,11 @@ class Salle
     /**
      * @return Collection<int, Activite>
      */
-    public function getActivite(): Collection
-    {
-        return $this->activite;
-    }
+   
 
-    public function addActivite(Activite $activite): self
-    {
-        if (!$this->activite->contains($activite)) {
-            $this->activite->add($activite);
-            $activite->setSalle($this);
-        }
+    
 
-        return $this;
-    }
-
-    public function removeActivite(Activite $activite): self
-    {
-        if ($this->activite->removeElement($activite)) {
-            // set the owning side to null (unless already changed)
-            if ($activite->getSalle() === $this) {
-                $activite->setSalle(null);
-            }
-        }
-
-        return $this;
-    }
+    
 
     public function getAuthor(): ?User
     {
@@ -146,30 +119,5 @@ class Salle
     /**
      * @return Collection<int, Commentary>
      */
-    public function getCommentaries(): Collection
-    {
-        return $this->commentaries;
-    }
-
-    public function addCommentary(Commentary $commentary): self
-    {
-        if (!$this->commentaries->contains($commentary)) {
-            $this->commentaries->add($commentary);
-            $commentary->setSalle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCommentary(Commentary $commentary): self
-    {
-        if ($this->commentaries->removeElement($commentary)) {
-            // set the owning side to null (unless already changed)
-            if ($commentary->getSalle() === $this) {
-                $commentary->setSalle(null);
-            }
-        }
-
-        return $this;
-    }
+   
 }

@@ -1,36 +1,70 @@
-<footer class="footer"style="background-color: #eba50e;">
+<div class="footer-container text-center">
+	<footer class="row row-cols-3 py-5 my-2">
+	
+		<div class="col">
+			<ul class="nav flex-column">
+				<li class="nav-item mb-2">
+					<a href="{{ path('mention') }}" class="nav-link p-0 text-white">{% trans %}Mentions légales{% endtrans %}</a>
+				</li>
+			</ul>
+		</div>
+			<div class="col">
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2">
+						<a href="{{ path('Confidentialite') }}" class="nav-link p-0 text-white">{% trans %}Politique de confidentialité{% endtrans %}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col">
+			<ul class="nav flex-column">
+				<li class="nav-item mb-2">
+					<a href="{{ path('apropos') }}" class="nav-link p-0 text-white">{% trans %}A propos{% endtrans %}</a>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="col">
+			<ul class="nav flex-column">
+				<li class="nav-item mb-2">
+					<a href="{{ path('contact') }}" class="nav-link p-0 text-white">{% trans %}Nous-contactez{% endtrans %}</a>
+				</li>
+			</ul>
+		</div>
+			<div class="col">
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_logout') }}" class="nav-link p-0 text-white">{% trans %}Se déconnecter{% endtrans %}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col">
+				<ul class="nav flex-column">
+					<li class="nav-item mb-2">
+						<a href="{{ path('app_login') }}" class="nav-link p-0 text-white">{% trans %}Êtes-vous administrateur{% endtrans %} ?</a>
+					</li>
 
-    {# ////////////////////////////////// FIRST PART //////////////////////////////////// #}
-    <div class="container border-top">
-        <div class="row mt-3">
-            <div class="col-12 col-md">
-                <h5>Salle de sport privée</h5>
-                <small class="d-block text-muted">&copy; {{ "now"|date('Y') }}</small>
+				</ul>
+			</div>
+		
+<br>
+<br>
+        <div class="container">
+            <div class="footer_group">
+              <ul class="footer_social">
+                
+                <a href="https://www.snapchat.com/add/coach-nath?share_id=mz+cDlK8S9O15xqLsOXlPQ&locale=fr_FR&sid=bb340d84fc7a45adb7b20238facdaa20" target="_blank" class="footer_social-link">
+                 <i class="bi bi-snapchat"></i>
+                </a>
+                <a href="https://www.instagram.com/coachnath13/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" target="_blank" class="footer_social-link">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </ul>
+              <span class="footer_copy">
+                &#169,copyright bedimcode.tous droits réservés
+              </span>
+<span><a href="https://github.com/wafafoufa88"><i class="bi bi-github"></i></a></span>
             </div>
-            <div class="col-6 col-md">
-                <h5>Catégories</h5>
-                <ul class="list-unstyled">
 
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-muted">Mentions légales</a></li>
-                    <li><a href="#" class="text-muted">Politique de confidentialité</a></li>
-                    <li><a href="#" class="text-muted">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    {# ////////////////////////////////// SECOND PART //////////////////////////////////// #}
-    <div class="container-fluid bg-dark mt-5">
-        <p class="text-center text-white p-2 m-0">
-            &copy; Salle de sport {{ "now"|date('Y') }} - Made with ❤ by
-            <a href="https://github.com/wafafoufa88"
-               class="text-reset"
-                    
-            >Wafa</a>
-        </p>
-    </div>
-</footer>
+          </div>
+		</footer>
+	</div>

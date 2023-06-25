@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Concept | SALLE DE SPORT PRIVEE{% endblock %}
+
+{% block body %}
+
+<div class="row">
+<div class="col">
+        <h1 class="section_subtitle titre_presetation1 fs-1 text-center  ">SALLE DE SPORT PRIVEE</h1>
+
+<h5 class="presentation_text fs-5 p-2 text-center">Bienvenue ! Si tu es arrivé jusqu'ici, tu dois te poser la question “Qu'est-ce que une salle de sport privée ?”</h5>
+<p class="presentation_text fs-5 p-2">salle de sport privée entièrement équipée, unique en son genre, qui se résume en un seul mot AUTONOMIE.
+Mise à disposition pour chacun, réserve la date et l’heure qui te convient et profite pleinement d’une salle RIEN QUE POUR TOI.
+
+En bref, c'est un espace disponible afin de faire son entrainement dans un endroit privé et entretenir son corps et sa santé.</p>
+<h5 class="presentation_text fs-5 p-2">   EN RÉSUMÉ, QUELS SONT LES AVANTAGES D'UNE SALLE PRIVEE</h5>
+  <p class="presentation_text fs-5 p-2">Efficacité : pas d’attente aux machines de musculation (gain de temps).
+
+Financier : paiement en espéce ou virement  selon réservation
+
+Liberté et intimité : fini le regard des autres, tu t’entraines à ton rythme selon ton envie et sans pression.</p>
+<h5 class="presentation_text fs-5 p-2">LA MEILLEURE SALLE DE SPORT PRIVEE !</h5>
+  <p class="presentation_text fs-5 p-2">Le fonctionnement reste le même qu'une salle de musculation lambda, tu reverses ton créneau à l'heure (ou plusieurs) et tu as a disposition ton box pour faire ton entrainement. </p>
+  
+ 
+<h5 class="presentation_text fs-5 p-2">OK J’AI TOUT COMPRIS, ALORS COMMENT JE RÉSERVE ?</h5>
+  <p class="presentation_text fs-5 p-2">Tu dois au préalable créer ton compte pour la 1ʳᵉ réservation de ta salle de sport. Ensuite Nous contactez pour organisé l'heure et le jour qui te convient.
+.</p>
+<h5 class="presentation_text fs-5 p-2">   EN RÉSUMÉ, QUELS SONT LES AVANTAGES D'UNE SALLE PRIVEE</h5>
+  <p class="presentation_text fs-5 p-2">Efficacité : pas d’attente aux machines de musculation (gain de temps).
+
+Financier : paiement en espéce ou virement  selon réservation
+
+Liberté et intimité : fini le regard des autres, tu t’entraines à ton rythme selon ton envie et sans pression.</p>
+  
+  </div>
+  <div class="col">
+      <img src="{{ asset('images/propos1.jpg')}}" class="card-img" alt="..." >
+  </div>
+  
+</div>
+</div>
+
+<div class="row">
+<div class="col">
+<h5 class="presentation_text fs-5 p-2">PUIS-JE VENIR AVEC DES AMIS ?</h5>
+  <p class="presentation_text fs-5 p-2">Oui, le sport est aussi un moment de partage. Tu peux réserver un créneau pour plusieurs personnes (conseillé à 3 personnes maximum).</p>
+<h5 class="presentation_text fs-5 p-2">  
+JE SUIS DÉBUTANT, J’AIMERAI ÊTRE ACCOMPAGNÉ ?</h5>
+  <p class="presentation_text fs-5 p-2"> Notre salle est proposée par un coach sportif .</p>
+</div>
+</div>
+
+<div class="row">
+<div class="col">
+  
+<h5 class="presentation_text fs-5 p-2">QUELS SPORTS ?</h5>
+  <p class="presentation_text fs-5 p-2">Notre salle dispose de tout le matériel de qualité pour pratiquer la musculation, fitness, cross-fit, cardio, HIIT. Sportifs occasionnels ou aguerris, nos salles s’adressent à tous. Si tu souhaites faire de la gym, des exercices d'étirements ou même du yoga tu trouveras tout le nécessaire sur place.</p>
+  <h5 class="presentation_text fs-5 p-2">  JE SUIS MINEUR ET JE SOUHAITE RÉSERVER ?</h5>
+  <p class="presentation_text fs-5 p-2">La création d'un compte pour les mineurs est autorisé. Toutefois, ce dernier devra être accompagné d'un majeur lors de sa séance.
+
+Vous pourrez donc venir naturellement avec vos parents, représentant légal ou alors un adulte qui pourra vous encadrer et veiller sur vous durant votre séance de musculation. Cela vous permettra d'éviter les blessures et différents problèmes durant votre créneau sportif au salle.
+Notre salle ne pourra en aucun cas être tenu pour responsable en cas de non-respect de cette règle.</p>
+</div>
+<div class="col">
+      <img src="{{ asset('images/propos3.jpg')}}" class="card-img" alt="..." >
+  </div>
+</div>
+
+    <nav aria-label="navigation">
+  <ul class="pager">
+    <li><a href="#" title="Haut"><i class="bi bi-arrow-up-circle"  style="font-size: 2rem; color: orange;"></i></a></li>
+    <li><a href="{{ path ('show_home') }}" title="Précédent"><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: orange;"></i></a></li>
+  </ul>
+</nav>
+ 
+{% endblock %}

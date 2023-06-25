@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte-abonnement{% endblock %}
+
+{% block body %}
+
+<div class="row ">
+        <div class="col-4 mx-auto p-3 row-cols-md-1 g-4">
+        <h1 class="section_subtitle titre_presetation1 fs-1  ">NOS CARTES </h1>
+<br>
+
+<div class="d-flex justify-content-center p-3">
+        <img src="{{ asset('images/carte1.jpg') }}" class="img-carte1" alt="...">
+      
+      
+        <img src="{{ asset('images/carte2.jpg') }}" class="img-carte2" alt="...">
+   
+
+<img src="{{ asset('images/carte3.jpg') }}" class="img-carte3" alt="...">
+
+
+    </div>
+    <br>
+    <br>
+    <nav aria-label="navigation">
+  <ul class="pager">
+    
+    <li><a href="{{ path('show_home') }}" title="Précédent"><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: orange;"></i></a></li>
+  </ul>
+</nav>
+</div>
+{% endblock %}

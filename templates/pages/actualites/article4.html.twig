@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article 3{% endblock %}
+
+{% block body %}
+
+<div class="row">
+        <div class="col-8 mx-auto p-4">
+        <h1 class="section_subtitle titre_presetation1 fs-1  ">Faire du sport en salle ou chez soi : comment choisir ?</h1>
+<br>
+
+<h3></h3>
+<p>Tu te demandes quelle est la meilleure option entre faire du sport chez toi ou faire du sport en salle ? Pour te faciliter la tâche, nous avons comparé différents critères. De quoi t’aider à choisir le meilleur endroit pour t’entraîner ! </p>
+<h3>De quel matériel as-tu besoin ?</h3>
+        <img src="{{ asset('images/article4.jpg') }}" class="img-article4" alt="...">
+        <h3></h3>
+        <p>Premier élément pour choisir entre faire du sport chez soi ou en salle : le matériel dont tu as besoin pour t’entraîner. Pour faire ton sport chez toi, de quoi as-tu besoin ? Ta réponse va directement dépendre de ta pratique.
+
+
+Tes entraînements de sport nécessitent peu de matériel ? Tu as seulement besoin d’une paire d’haltères, d’un tapis ou d’une corde à sauter ? Dans ce cas, t’entraîner chez toi est possible si tu as déjà acheté l’équipement nécessaire à ta pratique sportive.
+
+ 
+
+Si tu as besoin de beaucoup de matériel et que tu veux varier tes pratiques, il sera intéressant pour toi d’aller t’entraîner dans une salle de sport. Tu y trouveras un large choix de matériel sportif. Cela te permettra de réaliser de nombreux exercices ou de faire évoluer l’intensité de tes entraînements grâce à du matériel auquel tu n’aurais pas forcément eu accès si tu étais resté chez toi.</p>
+        <h3>Le coût d’un équipement sportif de qualité</h3>
+        <p>Si tu choisis de faire du sport en salle, tu profiteras d’un équipement de qualité, sélectionné avec soin par des sportifs professionnels. Tous les racks, kettlebells, swiss balls, sangles TRX, barres et poids représentent un investissement financier relativement important. En venant t’entraîner dans une salle de sport, tu vas profiter d’un large choix de matériel sportif, à la fois moderne et en très bon état, sans en supporter ni l’investissement de départ, ni l’entretien régulier.
+
+
+En comparaison, si tu choisis de faire ton sport à la maison ou dans ton appartement, tu te rendras compte qu’acheter du matériel de sport représente un coût financier non négligeable. Difficile de s’offrir du matériel de qualité en suffisance pour bénéficier du choix proposé dans une salle de sport.
+        </p>
+<h3>L’importance d’un espace dédié au sport</h3>
+<p>Faire son sport à la maison présente l’avantage de n’avoir aucun temps de trajet pour s’exercer. Mais faire du sport chez soi peut être synonyme de s’exercer au milieu du salon, entre les jouets des enfants, ou dans le bureau dans lequel on télétravaille déjà toute la journée. Il n’est pas donné à tout le monde d’avoir un espace dédié au sport dans son logement. L’espace que tu vas trouver pour faire ton sport chez toi ne sera donc pas forcément le plus adapté à ta pratique (risque de te cogner à une table basse, de sauter sur un Lego ou de donner un coup dans un écran).</p>
+<h3>Une atmosphère sportive pour rester motivé</h3>
+<p>Entre faire du sport chez soi et faire du sport dans une salle, il y a également une différence d’ambiance !</p>
+    
+<h3>S’entraîner dans une salle de sport : dynamisme et motivation</h3>
+<img src="{{ asset('images/actualite(4).jpg') }}" class="img-article4" alt="...">
+
+<p> En te rendant dans une salle de sport, tu pourras suivre ton entraînement en étant impliqué à 100%, sans te soucier des sollicitations des gens qui t’entourent. Les personnes autour de toi seront venues pour s’entraîner et faire de leur mieux. Tu seras porté par l’ambiance sportive de la salle et aura envie de revenir. De quoi rester motivé !
+
+
+Tu peux aussi réserver une salle de sport privée si tu veux faire ton sport en toute tranquillité, seul, avec des amis ou avec un coach. Entrée autonome grâce à une serrure connectée 24h/24 et 7j/7, matériel de qualité… C’est certainement l’option la plus confortable.</p>
+<h3></h3>
+<p>Si tu cherche une salle de sport privée à Marseille <a href="{{ path('contact')}}">réserve dès maintenant ton créneau !</a><p>
+<h3></h3>
+<p>En somme, s’entraîner chez soi ou à la salle de sport dépend de plusieurs facteurs : ton environnement, la régularité de ta pratique et tes besoins en matériel sportif. Pour une pratique ponctuelle, faire son sport à la maison est envisageable. Mais si tu as besoin de matériel, que tu veux évoluer dans ta pratique et que tu veux rester motivé, on te conseille d’aller dans une salle de sport !</p>
+
+<h3></h3>
+<p><p>
+    </div>
+    <nav aria-label="navigation">
+  <ul class="pager">
+    <li><a href="#" title="Haut"><i class="bi bi-arrow-up-circle"  style="font-size: 2rem; color: orange;"></i></a></li>
+    <li><a href="{{ path('show_actualite') }}" title="Précédent"><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: orange;"></i></a></li>
+  </ul>
+</nav>
+</div>
+{% endblock %}

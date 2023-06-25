@@ -21,9 +21,7 @@ class Commentary
     #[ORM\Column(length: 255)]
     private ?string $commentarie = null;
 
-    #[ORM\ManyToOne(inversedBy: 'commentaries')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Salle $salle = null;
+   
 
     #[ORM\ManyToOne(inversedBy: 'commentaries')]
     #[ORM\JoinColumn(nullable: false)]
@@ -46,17 +44,9 @@ class Commentary
         return $this;
     }
 
-    public function getSalle(): ?Salle
-    {
-        return $this->salle;
-    }
+   
 
-    public function setSalle(?Salle $salle): self
-    {
-        $this->salle = $salle;
-
-        return $this;
-    }
+   
 
     public function getAuthor(): ?User
     {

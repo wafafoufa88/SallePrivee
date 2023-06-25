@@ -34,6 +34,12 @@ class Abonnement
     #[ORM\Column(length: 50)]
     private ?string $alias = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $photo = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subtitre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,6 +101,30 @@ class Abonnement
     public function setAlias(string $alias): self
     {
         $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getSubtitre(): ?string
+    {
+        return $this->subtitre;
+    }
+
+    public function setSubtitre(string $subtitre): self
+    {
+        $this->subtitre = $subtitre;
 
         return $this;
     }

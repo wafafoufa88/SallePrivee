@@ -35,7 +35,7 @@ class UserController extends AbstractController
             $repository->save($user, true);
 
             $this->addFlash('success', "Votre inscription a été effectuée avec succès !");
-            return $this->redirectToRoute('show_home');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('user/register_form.html.twig', [

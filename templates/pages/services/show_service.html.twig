@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Nos service{% endtrans %} | Salle privée{% endblock %}
+
+
+{% block body %}
+<br>
+
+{#-------------------------------------------------program-----------------#}           
+<h1 class="section_subtitle titre_presetation1 fs-1 ">Coach sportif personnel</h1>
+{% for activite in activites %}
+'<section class="program section" id="program">
+    <div class="container">
+    <div class="program_container">
+        <article class="program_card">
+            <h2 class="program_title">{{ activite.titre}} <img width="150" height="150" class="img-fluid rounded-circle" src="{{ asset('uploads/' ~ activite.photo) }}" alt="{{ activite.photo }}"></h2>
+            <p class="program_description">{{ activite.description }}</p>
+        </article>
+    </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+{% endfor %}
+{% endblock %}
