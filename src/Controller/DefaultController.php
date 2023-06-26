@@ -50,9 +50,7 @@ class DefaultController extends AbstractController
 
         ]); 
     }
-<<<<<<< Updated upstream
     #[Route('/contact/contactez-nous', name: 'show_contact', methods: ['GET', 'POST'])]
-=======
 
 
 
@@ -77,7 +75,6 @@ class DefaultController extends AbstractController
 
 
     #[Route('/salle/contactez-nous', name: 'show_contact', methods: ['GET', 'POST'])]
->>>>>>> Stashed changes
     public function Contact(): Response
     {
 

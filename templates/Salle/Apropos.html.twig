@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Apropos {% endblock %}
+
+{% block body %}
+<br>
+<br>
+<h1 class="section_subtitle titre_presetation1 fs-1  text-center">A PROPOS</h1>
+	<div class="row">
+		<div class="col-8 mx-auto p-4">
+			
+			<br>
+			<h3 class="presentation_text fs-5 p-2">UN PROJET, UNE ASSOCIATION, UNE EQUIPE</h3>
+
+<br>
+<p class="presentation_text p-2">Notre salle est avant tout une rencontre et une association entre 2 personnes (Nath et Mya). nous partageons les mêmes valeurs : la famille, l’amitié, le travail et le respect des autres. Nous avons depuis toujours la volonté d'entreprendre et de créer.
+Ce projet est née de l'envie de proposer quelque chose d'innovant.
+Sportif régulier pour l'un et occasionnel pour l'autre, nous avons voulu renouveler l'offre actuelle sur le marché des salles de sport en proposant un concept innovant. En effet, l'idée est venu lors du 1er confinement d'un constat tout simple : de nombreuses personnes ont fait du sport chez eux de manière autonome durant cette période. 
+Par conséquent, nous voulions, une fois cette période terminée, proposer une salle entièrement équipée avec du matériel de qualité afin de permettre au sportif autonome de pouvoir continuer leur pratique sportive en toute intimité et autonomie : “comme à la maison”.
+Après étude et réalisation, nous nous sommes également rendus compte que ce concept répondait à d'autres attentes :
+de nombreux coachs sportifs recherchent des studios pour pouvoir coacher leurs élèves (jusqu'à maintenant ils font cela en extérieur avec peu de matériel)
+certaines personnes n'adhérent plus au concept de la salle de sport classique (trop de monde, trop m'as-tu-vu, raz le bol des abonnements)
+Ayant chacun une vie professionnelle bien chargée, ce projet a mis du temps à voir le jour. Depuis l’idée jusqu’au jour de l’ouverture il s’est passé une longue année. Entre la recherche du local, le matériel, la création du site web, créer une salle de sport privée louable n’a pas été une mince affaire.
+Malgré les déconvenues, nous avons toujours gardé le sourire car nous étions convaincus que notre idée en valait la peine.
+Il nous paraissait important de nous présenter car derrière chaque entreprise, marque, ou projet il y a des hommes et des femmes qui travaillent.
+Sportivement.</p>
+		</div>
+  <div class="col">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+      <img src="{{ asset('images/propos2.jpg')}}" class="card-img p-3" alt="..." >
+  </div>
+	</div>
+
+
+	
+<br>
+<br>
+	{#-------------------video----------------#}
+	
+<div class="d-flex bd-highlight text-center">
+	
+		<div class="flex-fill bd-highlight ">
+			<video width="600" height="400" controls>
+				<source src="{{ asset('videos/video3.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+		<div class=" flex-fill bd-highlight">
+			<video width="600" height="400" controls>
+				<source src="{{ asset('videos/video4.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+       
+	</div>
+    <div class="d-flex bd-highlight text-center">
+	
+		<div class="flex-fill bd-highlight ">
+			<video width="350" height="300" controls>
+				<source src="{{ asset('videos/video5.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+		<div class=" flex-fill bd-highlight">
+			<video width="350" height="300" controls>
+				<source src="{{ asset('videos/video1.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+        <div class=" flex-fill bd-highlight">
+			<video width="350" height="300" controls>
+				<source src="{{ asset('videos/video2.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+       
+	</div>
+	<nav aria-label="navigation">
+		<ul class="pager">
+			<li>
+				<a href="#" title="Haut">
+					<i class="bi bi-arrow-up-circle" style="font-size: 2rem; color: orange;"></i>
+				</a>
+			</li>
+			<li>
+				<a href="{{ path('show_home') }}" title="Précédent">
+					<i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: orange;"></i>
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+{% endblock %}

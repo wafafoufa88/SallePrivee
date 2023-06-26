@@ -268,9 +268,20 @@ transform: translateX(.25rem);
 /*---------------------pricing---------*/ 
 .pricing_button{
     background-color: rgb(53, 51, 51);
+
 }
 .pricing_button:hover{
     background-color:var(--first-color-alt) ;
+}
+.numero{
+display: none;
+}
+.pricing_button:hover .numero{
+    display: inline;
+    transition: 0.2ms;
+    }
+element.style {
+    display: none;
 }
 
 

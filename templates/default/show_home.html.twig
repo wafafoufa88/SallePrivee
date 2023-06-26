@@ -8,7 +8,6 @@
 					{% include 'include/_flashes.html.twig' %}
 				</div>
 {#-----------------------------------------------------carousel--------------#}
-{#<h1 class="section_subtitle titre_presetation1 fs-1">RESERVE TA SALLE DE SPORT</h1>#}
 
 <div id="carouselDark" class="carousel carousel-dark slide p-1 " data-bs-ride="carousel">
   <ol class="carousel-indicators">
@@ -69,7 +68,7 @@
           {{ abonnement.description }}
             </p>
             <h4>COACHING PRIVE DANS SALLE DE SPORT PRIVEE</h4>
-            <button type="button" class="button button_flex pricing_button  text-white"><a href="#"><i class="bi bi-telephone-outbound mx-4 icones fs-5" ></i>0644763091</a></i></i></button>
+            <button type="button" class="button button_flex pricing_button  text-white"><a href="#"><i class="bi bi-telephone-outbound mx-4 icones fs-5" ></i><span class="numero">0644763091</span></a></i></i></button>
           </div>
         </div>
       </div>
@@ -89,7 +88,8 @@
    <div class='row d-flex justify-content-evenly'>
 
 		<div class="card text-center bg-black border-warning" style="width: 25rem;">
-			<img class="rounded-circle" src="{{ asset('images/Nath.jpg')}}" width= "250"; class="card-img-top" alt="...">
+			<img class="rounded-circle" src="{{ asset('images/Nath.jpg')}}"
+       width= "250"; class="card-img-top" alt="photo_coatch">
 			<div class="card-body ">
 				<h2 class="card-title section_title-border">Coatch Nath</h2>
         <p class="card-title color-white">Cours collectif 2 fois par semaine à 50€ le mois</p>

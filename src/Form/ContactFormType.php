@@ -4,11 +4,13 @@ namespace App\Form;
 
 use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
+use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 
 class ContactFormType extends AbstractType
 {
@@ -37,8 +39,10 @@ class ContactFormType extends AbstractType
                 'placeholder' => 'Ecrivez votre message...',
                 'class' => 'my-4',
                 'style' => 'height: 130px;'
+                
             ]                
         ])
+
         ->add('submit', SubmitType::class, [
             'label' => 'Envoyer votre message',
             'attr' => [
@@ -46,6 +50,11 @@ class ContactFormType extends AbstractType
             ],
             'validate' => false
         ])
+        ->add('captcha', Recaptcha3Type::class, [
+            'constraints' => new Recaptcha3(),
+            'action_name' => 'contact',
+           
+        ]);
     ;
     }
 
